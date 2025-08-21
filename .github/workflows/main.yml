@@ -24,11 +24,14 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # You can change this to your preferred Node.js version
+          node-version: '20'
+          # MODIFIED: Added a cache-dependency-path to ensure a fresh cache is used
           cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
 
       - name: Install dependencies
-        run: npm install
+        # Use "ci" for clean installs in automated environments
+        run: npm ci
 
       - name: Build the React app
         run: npm run build

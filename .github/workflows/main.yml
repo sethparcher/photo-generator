@@ -21,13 +21,13 @@ jobs:
       - name: Checkout your repository
         uses: actions/checkout@v4
 
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          # MODIFIED: Added a cache-dependency-path to ensure a fresh cache is used
+          node-version: '20' # Or whatever version you use
           cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+          # Add this line to base the cache on your package.json
+          cache-dependency-path: package.json
 
       - name: Install dependencies
         # Use "ci" for clean installs in automated environments

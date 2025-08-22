@@ -221,7 +221,7 @@ export default function App() {
                   type="file"
                   accept="image/*"
                   className="hidden"
-              _id="uploader"
+                  id="uploader"
                   onChange={(e) => onFile(e.target.files?.[0])}
                 />
                 <label htmlFor="uploader" className="inline-block px-3 py-2 rounded-xl bg-neutral-900 text-white cursor-pointer hover:opacity-90 transition-opacity">Choose Image</label>

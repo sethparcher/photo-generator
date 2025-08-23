@@ -10,10 +10,11 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 // - Download PNG
 
 const PALETTE = [
-  { name: "News Green", value: "#6BFF7A" },
-  { name: "Lavender", value: "#C9B8FF" },
-  { name: "Fuchsia", value: "#FF27B1" },
-  { name: "Olive", value: "#6A5B17" },
+  { name: "Neon Green", value: "#33ff00" },
+  { name: "News Green", value: "#aef7a2" },
+  { name: "Lavender", value: "#ff01bb" },
+  { name: "Fuchsia", value: "#c4b9ff" },
+  { name: "Olive", value: "#0ba02a" },
   { name: "Black", value: "#000000" },
   { name: "White", value: "#FFFFFF" },
 ];
@@ -262,7 +263,7 @@ aria-label={c.name}
 />
   ))}
     </div>
-    </div>
+    </div>\
     </div>
     
 <div className="grid grid-cols-2 gap-3">

@@ -235,52 +235,52 @@ export default function App() {
  <div className="grid grid-cols-2 gap-3">
    <div>
    <label className="block text-sm font-medium mb-1">Canvas Size</label>
-   <select
-   className="w-full rounded-xl border border-neutral-300 p-2 bg-white"
-   value={size.label}
-   onChange={(e) => {
-  const next = sizeOptions.find((s) => s.label === e.target.value);
-  if (next) setSize(next);
-   }}
-   >
-   {sizeOptions.map((s) => (
-  <option key={s.label} value={s.label}>{s.label}</option>
-   ))}
-   </select>
-   </div>
-
-   <div>
-   <label className="block text-sm font-medium mb-1">Background</label>
-   <div className="flex gap-2 flex-wrap">
-   {PALETTE.map((c) => (
-  <button
-  key={c.value}
-  className={`w-8 h-8 rounded-full border-2 transition-all ${bg === c.value ? "ring-2 ring-offset-2 ring-neutral-900 border-white" : "border-neutral-300 hover:border-neutral-500"}`}
-  style={{ background: c.value }}
-  onClick={() => setBg(c.value)}
-  aria-label={c.name}
-  />
-   ))}
-   </div>
-   </div>
- </div>
-
- <div className="grid grid-cols-2 gap-3">
-   <div>
-   <label className="block text-sm font-medium mb-1">Direction</label>
-   <select
-   className="w-full rounded-xl border border-neutral-300 p-2 bg-white"
-   value={direction}
-   onChange={(e) => setDirection(e.target.value)}
-   >
-   <option value="right">Grow Right →</option>
-   <option value="left">Grow Left ←</option>
-   </select>
-   </div>
-
-   <div>
-   <label className="block text-sm font-medium mb-1">Anchor</label>
-   <select
+     <select
+     className="w-full rounded-xl border border-neutral-300 p-2 bg-white"
+     value={size.label}
+     onChange={(e) => {
+     const next = sizeOptions.find((s) => s.label === e.target.value);
+       if (next) setSize(next);
+     }}
+     >
+     {sizeOptions.map((s) => (
+       <option key={s.label} value={s.label}>{s.label}</option>
+       ))}
+    </select>
+  </div>
+      
+  <div>
+    <label className="block text-sm font-medium mb-1">Background</label>
+      <div className="flex gap-2 flex-wrap">
+    {PALETTE.map((c) => (
+      <button
+      key={c.value}
+className={`w-8 h-8 rounded-full border-2 transition-all ${bg === c.value ? "ring-2 ring-offset-2 ring-neutral-900 border-white" : "border-neutral-300 hover:border-neutral-500"}`}
+style={{ background: c.value }}
+onClick={() => setBg(c.value)}
+aria-label={c.name}
+/>
+  ))}
+    </div>
+    </div>
+    </div>
+    
+<div className="grid grid-cols-2 gap-3">
+    <div>
+    <label className="block text-sm font-medium mb-1">Direction</label>
+    <select
+      className="w-full rounded-xl border border-neutral-300 p-2 bg-white"
+      value={direction}
+      onChange={(e) => setDirection(e.target.value)}
+          >
+          <option value="right">Grow Right →</option>
+          <option value="left">Grow Left ←</option>
+      </select>
+    </div>
+        
+    <div>
+        <label className="block text-sm font-medium mb-1">Anchor</label>
+        <select
    className="w-full rounded-xl border border-neutral-300 p-2 bg-white"
    value={anchor}
    onChange={(e) => setAnchor(e.target.value)}
@@ -291,40 +291,40 @@ export default function App() {
    </select>
    </div>
  </div>
-
+ 
  <div className="grid grid-cols-2 gap-3">
-   <div>
-   <label className="block text-sm font-medium">Repeats: {repeats}</label>
-   <input type="range" min={1} max={6} value={repeats} onChange={(e) => setRepeats(parseInt(e.target.value))} className="w-full" />
+   <div>
+     <label className="block text-sm font-medium">Repeats: {repeats}</label>
+     <input type="range" min={1} max={6} value={repeats} onChange={(e) => setRepeats(parseInt(e.target.value))} className="w-full" />
    </div>
    <div>
-   <label className="block text-sm font-medium">Padding: {padding}px</label>
-   <input type="range" min={0} max={200} value={padding} onChange={(e) => setPadding(parseInt(e.target.value))} className="w-full" />
+     <label className="block text-sm font-medium">Padding: {padding}px</label>
+     <input type="range" min={0} max={200} value={padding} onChange={(e) => setPadding(parseInt(e.target.value))} className="w-full" />
    </div>
  </div>
-
+ 
  <div>
    <label className="block text-sm font-medium">Base Image Size: {baseScalePct}% of shortest side</label>
    <input type="range" min={20} max={120} value={baseScalePct} onChange={(e) => setBaseScalePct(parseInt(e.target.value))} className="w-full" />
  </div>
-
+     
  <div className="grid grid-cols-3 gap-3">
    <div>
-   <label className="block text-sm font-medium">Gap per Step: {gapPct}% width</label>
-   <input type="range" min={-60} max={60} value={gapPct} onChange={(e) => setGapPct(parseInt(e.target.value))} className="w-full" />
-   <p className="text-xs text-neutral-500">Negative overlaps</p>
+     <label className="block text-sm font-medium">Gap per Step: {gapPct}% width</label>
+     <input type="range" min={-60} max={60} value={gapPct} onChange={(e) => setGapPct(parseInt(e.target.value))} className="w-full" />
+     <p className="text-xs text-neutral-500">Negative overlaps</p>
    </div>
-   <div>
-   <label className="block text-sm font-medium">Scale Step: {stepScale}%</label>
-   <input type="range" min={60} max={110} value={stepScale} onChange={(e) => setStepScale(parseInt(e.target.value))} className="w-full" />
-   <p className="text-xs text-neutral-500">Each layer relative to previous</p>
+   <div>
+     <label className="block text-sm font-medium">Scale Step: {stepScale}%</label>
+     <input type="range" min={60} max={110} value={stepScale} onChange={(e) => setStepScale(parseInt(e.target.value))} className="w-full" />
+     <p className="text-xs text-neutral-500">Each layer relative to previous</p>
    </div>
-   <div>
-   <label className="block text-sm font-medium">Y Offset: {yOffsetPct}% height</label>
-   <input type="range" min={-60} max={60} value={yOffsetPct} onChange={(e) => setYOffsetPct(parseInt(e.target.value))} className="w-full" />
+   <div>
+     <label className="block text-sm font-medium">Y Offset: {yOffsetPct}% height</label>
+     <input type="range" min={-60} max={60} value={yOffsetPct} onChange={(e) => setYOffsetPct(parseInt(e.target.value))} className="w-full" />
    </div>
- </div>
-
+  </div>
+     
  <div className="text-xs text-neutral-500 pt-2 border-t border-neutral-200 mt-4">
    Tips: try <span className="font-medium">Grow Right</span>, <span className="font-medium">Anchor: Bottom Right</span>, Gap -18%, Scale Step 90%, Y Offset 0% for the overlapping look in your comps.
  </div>
